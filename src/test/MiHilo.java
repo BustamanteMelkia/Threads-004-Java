@@ -1,4 +1,7 @@
-package models;
+package test;
+
+import models.Alumno;
+import models.Rol;
 
 /**
  *      Segunda Parte - Actividad 4
@@ -23,20 +26,10 @@ class MiHilo extends Thread{
         // a todos los métodos de Thread, incluido el método getName().
         try {
             Thread.sleep(5);
-            System.out.println(alumno.getNombre()+" "+alumno.getApPaterno()+" "+alumno.getApMaterno()+" \tMatricula: "+alumno.getMatricula()+", \tRol: "+alumno.getRol());
-            
+            System.out.println(this.alumno);
         }catch (InterruptedException exc){
             System.out.println(getName()+ " interrumpido.");
         }
     }
-    public static void main(String args[]){ 
-        
-        Alumno alumnos [] = new Alumno[4];
-        alumnos[0] = new Alumno("Melquiades","Bustamante", "Bonfil","201748133","Lider");
-        alumnos[1] = new Alumno("David","Tlahuapa", "Coraza  ","201736875","Programador");
-        alumnos[2] = new Alumno("Jesús","Yahuitl", "Rodriguez","201744550","Tester");
-        alumnos[3] = new Alumno("Cristiam","Parraguirre", "Lagunes","201758915","Diseñador");
-        for(Alumno alumno : alumnos)
-            new MiHilo("hilo1",alumno).start();
-    }
+
 }
